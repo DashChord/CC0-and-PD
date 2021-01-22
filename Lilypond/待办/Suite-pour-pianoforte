@@ -1,0 +1,298 @@
+\version "2.20.0"
+\language "english"
+\book {
+  \bookpart {
+    \paper {
+      line-width = 130\mm
+      tocItemMarkup = \tocItemWithDotsMarkup
+    }
+    \header {
+      title =
+      \markup {
+        \column{
+          \vspace #8
+          \center-align \line{\magnify #7 SUITE}
+          \vspace #2
+          \center-align \line{\magnify #2 pour}
+          \vspace #2
+          \center-align \line{\magnify #3.2 PIANOFORTE}
+          \vspace #4
+          \center-align \line{\italic \magnify #1.65 {FREDERIC LOUIS RITTER.}}
+        }
+      }
+      pdftitle = "Suite pour Pianoforte."
+      pdfcomposer = "FREDERIC LOUIS RITTER."
+      pdfcreator = "DisChord"
+      %Author:FREDERIC LOUIS RITTER.
+      opus = "OP.16."
+      tagline = ##f
+    }
+
+    \markup{ \vspace #10 }
+    \markuplist
+    \table-of-contents
+  }
+  \pageBreak
+  \bookpart {
+    \header {
+      dedication = "I"
+      title = "FANTASIA"
+      composer = ""
+      opus = ""
+    }
+    \paper {
+      line-width = 170\mm
+    }
+    \score {
+      \new PianoStaff \with {
+        instrumentName = \markup { \bold "Piano." }
+      }
+      <<
+        \new Staff
+        \relative c' {
+          \key c \major
+          \time 2/4
+          \partial 16
+          \tempo "Adagio."
+          \tocItem \markup "FANTASIA"
+          a16 b c d
+        }
+        \new Staff
+        \relative c' {
+          \key c \major
+          \time 2/4
+          \partial 16
+          \clef bass
+          a d f d
+        }
+      >>
+    }
+  }
+  \bookpart {
+    \header {
+      dedication = "II"
+      title = "MENUETTO"
+      composer = ""
+      opus = ""
+    }
+    \paper {
+      line-width = 170\mm
+    }
+
+    \score {
+      \new PianoStaff \with {
+        instrumentName = \markup {
+          \bold "Piano."
+        }
+      }
+      <<
+        %***********
+        \new Staff \with {
+          \consists "Span_arpeggio_engraver"
+          \consists "Span_stem_engraver"
+        }
+        {
+          \set Staff.connectArpeggios = ##t
+          \tempo "Allegro Moderato."
+          \key a \major
+          \time 3/4
+          \tocItem \markup "MENUETTO"
+          <<
+            \new Voice \relative c''
+            {
+              \voiceOne
+              fs2. e2 4^>~ 4 d8 cs b cs
+              \appoggiatura {b16 cs} b8 a gs a cs fs,
+              fs'2.
+              e2 e4^>~ \arpeggio
+              \break
+              e d8 cs b cs
+              \appoggiatura {b16 cs} b8 a gs a e a
+              \bar ":|."
+              cs4 d8 (cs bs cs
+              a'4) <a cs, a> r4
+              b cs8 b a b
+              cs es cs gs es cs8
+              (4)
+            }
+            \new Voice \relative c''
+            {
+              \voiceTwo
+              r4 <b fs>2 r4 <cs a e>2~ 4 d, s4|
+              s2.
+              r4 <fs b>2
+              r4 <e a cs> <e g cs>4~
+              \arpeggio 4 s4 d
+              cs s cs
+              s4 \crossStaff {\stemDown gs'4} s4 fs gs8 ^(fs es fs
+              <d fs gs>4)
+            }
+          >>
+        }
+        %***********
+        \new Staff \with {
+          \consists "Span_arpeggio_engraver"
+          \consists "Span_stem_engraver"
+        }
+        \relative c' {
+          \set Staff.connectArpeggios = ##t
+          \key a \major
+          \time 3/4
+          \clef bass
+          \autoBeamOff
+          <<
+            \new Voice \relative c'{
+              \voiceOne
+              r4 <gs d'>2 r4 <a cs>2 s2.
+              cs8 b s4 <cs a>4
+              r <d gs,>2
+              r4 <cs a e> <cs g e>4\arpeggio
+              b, <fs' b d> <gs b, e,>
+              <a e a,> e, <a' e a,>
+              <es es,>
+              \crossStaff { <es b' cs> }
+            }
+            \new Voice \relative c'{
+              \voiceTwo
+              d,2. cs2 4 ^(b) <d fs b> <e gs cs>
+              <e a,> <a cs e> fs8 e
+              d2.
+              cs2 a4 \arpeggio
+            }
+          >>
+        }
+      >>
+    }
+  }
+  \bookpart {
+    \header {
+      dedication = "III"
+      title = "PROMENADE"
+      composer = ""
+      opus = ""
+    }
+    \paper {
+      line-width = 170\mm
+    }
+    \score {
+      \new PianoStaff \with {
+        instrumentName = \markup { \bold "Piano." }
+      }
+      <<
+        \relative c' {
+          \key fs \major
+          \time 2/8
+          \tempo "Andante."
+          \tocItem \markup "PROMENADE"
+          <fs as>16. [^(<fs b>32 <fs cs'>16^. <fs b ds>^.)]
+          <gs cs gs'> \arpeggio
+        }
+        \relative c' {
+          \key fs \major
+          \time 2/8
+          \clef bass
+          a b c d
+        }
+      >>
+    }
+  }
+  \bookpart {
+    \header {
+      dedication = "IV"
+      title = "VALSE"
+      composer = ""
+      opus = ""
+    }
+    \paper {
+      line-width = 170\mm
+    }
+    \score {
+      \new PianoStaff \with {
+        instrumentName = \markup { \bold "Piano." }
+      }
+      <<
+        \relative c' {
+          \key a \major
+          \time 3/4
+          \partial 8
+          \tempo "Allegro."
+          \tocItem \markup "VALSE"
+          a b c d
+        }
+        \relative c' {
+          \key a \major
+          \time 3/4
+          \partial 8
+          \clef bass
+          a b c d
+        }
+      >>
+    }
+  }
+  \bookpart {
+    \header {
+      dedication = "V"
+      title = "MARCHE SENTIMENTALE"
+      composer = ""
+      opus = ""
+    }
+    \paper {
+      line-width = 170\mm
+    }
+    \score {
+      \new PianoStaff \with {
+        instrumentName = \markup { \bold "Piano." }
+      }
+      <<
+        \relative c' {
+          \key df \major
+          \tempo "Moderato."
+          \tocItem \markup "MARCHE SENTIMENTALE"
+          a b c d
+        }
+        \relative c' {
+          \key df \major
+          \clef bass
+          a b c d
+        }
+      >>
+    }
+  }
+  \bookpart {
+    \header {
+      dedication = "VI"
+      title = "JIG"
+      composer = ""
+      opus = ""
+    }
+    \paper {
+      line-width = 170\mm
+    }
+    \score {
+      \new PianoStaff \with {
+        instrumentName = \markup { \bold "Piano." }
+      }
+      <<
+        \relative c''' {
+          \tempo "Molto Vivace."
+          \key a \major
+          \time 6/8
+          \tocItem \markup "JIG"
+          cs2. \trill
+          \afterGrace 2. \trill
+          {bs16 cs}
+          e8 cs gs a ds, bs
+
+        }
+        \relative c' {
+          \key a \major
+          \clef bass
+          \time 6/8
+          
+          \clef treble
+          a
+        }
+      >>
+    }
+  }
+}
