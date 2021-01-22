@@ -1,0 +1,119 @@
+\version "2.20.0"
+\language "english"
+\book {
+  \header {
+  pdftitle = "ONE HUNDRED ENGLISH FOLKSONGS"
+  }
+\bookpart {
+  \header {
+    dedication = "1"
+    title = "Henry Martin"
+    arranger = \markup{
+      \center-column{
+        \line{"Collected and arranged by"}
+        \line{"CECIL J. SHARP"}
+      }
+    }
+
+  }
+  \paper {
+    ragged-right = ##f
+  }
+  <<
+    \new Staff = "Voice" \with { instrumentName = "VOICE" }
+    \relative c' {
+      \key f \major
+      \time 3/4
+      R1*3/4
+      r4 r d
+      d (a') a
+      a (g) a
+      f g e
+      d2 4
+      \break
+      f e d
+      g f g
+      a2.~
+      a2
+      <<
+        {a4}
+        \\
+        {\autoBeamOff a8 8}
+      >>
+      a4
+    }
+    \new PianoStaff \with { instrumentName = "PIANO"}
+    <<
+      \new Staff
+      \relative c'{
+        \key f \major
+        \time 3/4
+        r4 <d a>_. (<d a>_.))
+        r4 <d a>_. (<d a>_.))
+        \repeat volta 2{
+          r4 <d a>_. (<d a>_.))
+          r4 <d a>_. (<d a>_.))
+          r4 <d a>_. (<d a>_.))
+          r4 <d a>_. (<d a>_.))
+        }
+      }
+      \new Staff
+      \relative c{
+        \key f \major
+        \time 3/4
+        \clef bass
+        d2.
+        d,
+        d'
+        d,
+        d'
+        d,
+      }
+    >>
+  >>
+}
+\bookpart {}
+\bookpart {}
+\bookpart {}
+\bookpart {}
+\bookpart {}
+\bookpart {}
+\bookpart {}
+\bookpart {}
+\bookpart {}
+\bookpart {}
+\bookpart {}
+\bookpart {}
+\bookpart {}
+\bookpart {}
+\bookpart {}
+\bookpart {}
+\bookpart {}
+\bookpart {}
+\bookpart {}
+\bookpart {}
+\bookpart {}
+\bookpart {}
+\bookpart {}
+\bookpart {}
+\bookpart {}
+\bookpart {}
+\bookpart {}
+\bookpart {}
+\bookpart {}
+\bookpart {}
+\bookpart {}
+\bookpart {}
+\bookpart {}
+\bookpart {}
+\bookpart {}
+\bookpart {}
+\bookpart {}
+\bookpart {}
+\bookpart {}
+\bookpart {}
+\bookpart {}
+\bookpart {}
+\bookpart {}
+\bookpart {}
+}
